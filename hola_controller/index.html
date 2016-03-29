@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Hola mundo con AngularJS</title>
-	 <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -15,15 +15,40 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="controller.js"></script>
 </head>
+<style>
+	.toppadding{
+		padding-top: 50px;
+	}
+</style>
 <body ng-controller="FirstController">
-	<input type="text" ng-model="nuevoComentario.comentario"><br>
-	<input type="text" ng-model="nuevoComentario.username">
-	<button ng-click="agregarComentario()">Agregar comentario</button>
+<div class="container">
+  <h1>Seccion de comentarios</h1>
+  <div class="row-fluid">
+    <div class="col-sm-5">
+    	<label>Agrega tu comentario</label>
+    	<input type="text" ng-model="nuevoComentario.comentario">
+    </div>
+    <div class="col-sm-5">
+    	<label>Usuario</label>
+    	<input type="text" ng-model="nuevoComentario.username">
+    </div>
+  </div>
+
+  <div class="row-fluid toppadding">
+  	<div class="col-sm-12">
+  	<button ng-click="agregarComentario()">Agregar comentario</button>
+	</div>
+  </div>
+</div>
+
+<div class="container">
 	<h3>Comentarios</h3>
 	<ul>
 		<li ng-repeat="comentario in comentarios">
 			{{comentario.comentario}} - <strong>{{comentario.username}}</strong>
 		</li>
 	</ul>
+</div>
+
 </body>
 </html>
